@@ -1,0 +1,94 @@
+:root {
+  --primary-color: #0073e6;
+  --secondary-color: #005bb5;
+  --bg-light: #f4f4f4;
+  --bg-dark: #222;
+  --text-color: #333;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-light);
+  color: var(--text-color);
+}
+header {
+  background: linear-gradient(135deg, var(--primary-color), #00c6ff);
+  color: white;
+  padding: 80px 10%;
+  text-align: center;
+}
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+nav {
+  background: var(--secondary-color);
+  padding: 10px 10%;
+  text-align: center;
+}
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+section {
+  padding: 40px 10%;
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+h2 {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.project {
+  background: #e9f1ff;
+  border-radius: 6px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+.project:hover {
+  transform: translateY(-5px);
+}
+.project img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+footer {
+  background: var(--bg-dark);
+  color: white;
+  text-align: center;
+  padding: 15px 10%;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.contact-form button {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.contact-form button:hover {
+  background: var(--secondary-color);
+}
