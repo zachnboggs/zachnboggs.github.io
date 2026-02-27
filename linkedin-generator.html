@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn Thought Leadership Generator | Senior Content Strategist · 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --li: #0A66C2;
+      --li-dark: #004182;
+      --li-light: #e8f0fa;
+      --bg: #f3f2ef;
+      --white: #ffffff;
+      --border: #e0e0e0;
+      --text: #191919;
+      --muted: #666;
+      --success: #057642;
+      --warn: #b24020;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, var(--li) 0%, #0891b2 100%);
+      color: white;
+      padding: 56px 10% 48px;
+      text-align: center;
+    }
+
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: white;
+      padding: 5px 16px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    header p {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      opacity: 0.88;
+      font-weight: 300;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── Layout ── */
+    .page-wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 36px 20px 60px;
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    @media (max-width: 960px) {
+      .page-wrap { grid-template-columns: 1fr; }
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.09);
+      overflow: hidden;
+    }
+
+    .card-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-header h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--li);
+    }
+
+    .card-body { padding: 20px 24px 24px; }
+
+    /* ── Form Elements ── */
+    .form-section { margin-bottom: 22px; }
+
+    .form-section:last-child { margin-bottom: 0; }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #444;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    label .opt {
+      font-weight: 400;
+      color: #aaa;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px 13px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-size: 0.875rem;
+      color: var(--text);
+      background: #fafafa;
+      transition: border-color 0.18s, box-shadow 0.18s, background 0.18s;
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--li);
+      box-shadow: 0 0 0 3px rgba(10,102,194,0.13);
+      background: white;
+    }
+
+    input.error, textarea.error {
+      border-color: var(--warn) !important;
+      box-shadow: 0 0 0 3px rgba(178,64,32,0.12) !important;
+    }
+
+    textarea { resize: vertical; min-height: 82px; }
+
+    select { cursor: pointer; }
+
+    /* ── Post-type grid ── */
+    .type-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+    }
+
+    @media (max-width: 480px) {
+      .type-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .type-btn {
+      padding: 11px 6px 9px;
+      border: 1.5px solid var(--border);
+      border-radius: 9px;
+      background: #fafafa;
+      cursor: pointer;
+      text-align: center;
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #666;
+      transition: all 0.17s;
+      line-height: 1.3;
+    }
+
+    .type-btn:hover {
+      border-color: var(--li);
+      color: var(--li);
+      background: var(--li-light);
+    }
+
+    .type-btn.active {
+      border-color: var(--li);
+      background: var(--li);
+      color: white;
+    }
+
+    .type-btn .icon {
+      display: block;
+      font-size: 1.25rem;
+      margin-bottom: 5px;
+    }
+
+    /* ── Emoji toggles ── */
+    .toggle-row {
+      display: flex;
+      gap: 7px;
+    }
+
+    .toggle-btn {
+      flex: 1;
+      padding: 8px 4px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: #fafafa;
+      cursor: pointer;
+      text-align: center;
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #666;
+      transition: all 0.17s;
+    }
+
+    .toggle-btn.active {
+      border-color: var(--li);
+      background: var(--li);
+      color: white;
+    }
+
+    /* ── Generate button ── */
+    .gen-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--li);
+      color: white;
+      border: none;
+      border-radius: 9px;
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.18s, transform 0.1s, box-shadow 0.18s;
+      letter-spacing: 0.01em;
+      margin-top: 4px;
+      box-shadow: 0 2px 8px rgba(10,102,194,0.25);
+    }
+
+    .gen-btn:hover {
+      background: var(--li-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(10,102,194,0.3);
+    }
+
+    .gen-btn:active { transform: translateY(0); }
+
+    /* ── Preview column ── */
+    .preview-col {
+      position: sticky;
+      top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (max-width: 960px) {
+      .preview-col { position: static; }
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--li);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 10px;
+    }
+
+    /* ── LinkedIn Card Mockup ── */
+    .li-card { border-radius: 12px; }
+
+    .li-card-top {
+      padding: 14px 18px 0;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--li), #0891b2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      flex-shrink: 0;
+      letter-spacing: 0.02em;
+    }
+
+    .profile-name {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .profile-role {
+      font-size: 0.73rem;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .post-body {
+      padding: 14px 18px 10px;
+      font-size: 0.86rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: #1a1a1a;
+      min-height: 180px;
+    }
+
+    .post-body.placeholder {
+      color: #bbb;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px 24px;
+      font-size: 0.85rem;
+    }
+
+    .li-reactions {
+      padding: 6px 18px 6px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.74rem;
+      color: var(--muted);
+    }
+
+    .li-actions {
+      padding: 2px 10px 10px;
+      border-top: 1px solid var(--border);
+      display: flex;
+    }
+
+    .li-action {
+      flex: 1;
+      padding: 8px 4px;
+      background: none;
+      border: none;
+      border-radius: 6px;
+      cursor: default;
+      font-size: 0.73rem;
+      font-weight: 600;
+      color: #666;
+      font-family: 'Poppins', system-ui, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    /* ── Action row ── */
+    .action-row {
+      display: flex;
+      gap: 10px;
+    }
+
+    .act-btn {
+      flex: 1;
+      padding: 10px 8px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      font-family: 'Poppins', system-ui, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #555;
+      transition: all 0.17s;
+    }
+
+    .act-btn:hover { border-color: var(--li); color: var(--li); }
+
+    .act-btn.success { border-color: var(--success); color: var(--success); }
+
+    /* ── Meta card ── */
+    .meta-card { display: none; }
+
+    .meta-card .card-body { padding: 0; }
+
+    .meta-row {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .meta-row:last-child { border-bottom: none; }
+
+    .meta-val {
+      font-size: 0.84rem;
+      color: #444;
+      line-height: 1.65;
+      margin-top: 6px;
+    }
+
+    .char-display {
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .char-display.warn { color: #b45309; }
+    .char-display.over { color: var(--warn); }
+
+    .tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 7px;
+    }
+
+    .tag {
+      padding: 3px 11px;
+      background: var(--li-light);
+      border: 1px solid #c8dcf5;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--li);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+      user-select: none;
+    }
+
+    .tag:hover { background: var(--li); color: white; border-color: var(--li); }
+
+    .strat-note {
+      background: linear-gradient(135deg, #f0f7ff 0%, #e6f3ff 100%);
+      border-left: 3px solid var(--li);
+      padding: 13px 16px;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.8rem;
+      color: #333;
+      line-height: 1.65;
+      margin-top: 7px;
+    }
+
+    .strat-note strong { color: var(--li); }
+
+    /* ── Footer ── */
+    footer {
+      background: #111;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 22px 10%;
+      font-size: 0.8rem;
+    }
+
+    footer strong { color: white; }
+
+    /* ── Animations ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in { animation: fadeUp 0.32s ease forwards; }
+
+    /* ── Divider ── */
+    .divider { height: 1px; background: var(--border); margin: 4px 0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-badge">&#x1F4BC; Senior Strategist Perspective &middot; 2026</div>
+  <h1>LinkedIn Thought Leadership Generator</h1>
+  <p>Eight battle-tested frameworks — crafted around how the LinkedIn algorithm actually works in 2026.</p>
+</header>
+
+<div class="page-wrap">
+
+  <!-- ════════════ FORM PANEL ════════════ -->
+  <div class="card">
+    <div class="card-header">
+      <h2>Configure Your Post</h2>
+    </div>
+    <div class="card-body">
+
+      <!-- Post Format -->
+      <div class="form-section">
+        <label>Post Format</label>
+        <div class="type-grid">
+          <button class="type-btn active" data-type="contrarian" onclick="selectType(this)">
+            <span class="icon">🔥</span>Contrarian Take
+          </button>
+          <button class="type-btn" data-type="story" onclick="selectType(this)">
+            <span class="icon">📖</span>Story Arc
+          </button>
+          <button class="type-btn" data-type="data" onclick="selectType(this)">
+            <span class="icon">📊</span>Data Drop
+          </button>
+          <button class="type-btn" data-type="howto" onclick="selectType(this)">
+            <span class="icon">🛠️</span>How-To Thread
+          </button>
+          <button class="type-btn" data-type="prediction" onclick="selectType(this)">
+            <span class="icon">🔮</span>Bold Prediction
+          </button>
+          <button class="type-btn" data-type="myth" onclick="selectType(this)">
+            <span class="icon">💥</span>Myth Buster
+          </button>
+          <button class="type-btn" data-type="lesson" onclick="selectType(this)">
+            <span class="icon">💡</span>Personal Lesson
+          </button>
+          <button class="type-btn" data-type="framework" onclick="selectType(this)">
+            <span class="icon">🗺️</span>Framework Drop
+          </button>
+        </div>
+      </div>
+
+      <!-- Topic -->
+      <div class="form-section">
+        <label>Topic / Core Idea</label>
+        <input type="text" id="f-topic"
+          placeholder="e.g. AI is killing authentic content strategy" />
+      </div>
+
+      <!-- Insight -->
+      <div class="form-section">
+        <label>Your Key Insight</label>
+        <textarea id="f-insight"
+          placeholder="What's the single thing you want your audience to walk away knowing or feeling?"></textarea>
+      </div>
+
+      <!-- Metric -->
+      <div class="form-section">
+        <label>Stat or Data Point <span class="opt">(optional — adds credibility)</span></label>
+        <input type="text" id="f-metric"
+          placeholder="e.g. 73% of B2B buyers trust personal brand over brand ads" />
+      </div>
+
+      <!-- Industry -->
+      <div class="form-section">
+        <label>Target Industry</label>
+        <select id="f-industry">
+          <option value="marketing">Marketing &amp; Advertising</option>
+          <option value="tech">Technology &amp; SaaS</option>
+          <option value="finance">Finance &amp; FinTech</option>
+          <option value="healthcare">Healthcare &amp; MedTech</option>
+          <option value="education">Education &amp; EdTech</option>
+          <option value="ecommerce">E-Commerce &amp; Retail</option>
+          <option value="services">Professional Services</option>
+          <option value="media">Media &amp; Entertainment</option>
+          <option value="hr">HR &amp; People Ops</option>
+          <option value="startup">Startups &amp; Venture</option>
+        </select>
+      </div>
+
+      <!-- Role -->
+      <div class="form-section">
+        <label>Your Name &amp; Role <span class="opt">(optional)</span></label>
+        <input type="text" id="f-role"
+          placeholder="e.g. Sarah Chen — VP of Content, Nexus Digital" />
+      </div>
+
+      <!-- Emoji style -->
+      <div class="form-section">
+        <label>Emoji Style</label>
+        <div class="toggle-row">
+          <button class="toggle-btn" data-emoji="none" onclick="selectEmoji(this)">None</button>
+          <button class="toggle-btn active" data-emoji="minimal" onclick="selectEmoji(this)">Minimal</button>
+          <button class="toggle-btn" data-emoji="strategic" onclick="selectEmoji(this)">Strategic</button>
+          <button class="toggle-btn" data-emoji="full" onclick="selectEmoji(this)">Full</button>
+        </div>
+      </div>
+
+      <button class="gen-btn" onclick="generatePost()">Generate Post →</button>
+
+    </div>
+  </div>
+
+  <!-- ════════════ PREVIEW COLUMN ════════════ -->
+  <div class="preview-col">
+
+    <!-- LinkedIn card -->
+    <div class="section-label">Preview</div>
+    <div class="card li-card">
+      <div class="li-card-top">
+        <div class="avatar" id="avatar">SC</div>
+        <div>
+          <div class="profile-name" id="profile-name">Your Name</div>
+          <div class="profile-role" id="profile-role">Senior Content Strategist · 2026</div>
+        </div>
+      </div>
+      <div class="post-body placeholder" id="post-output">
+        Fill in your details and click <strong>Generate Post</strong> to see your LinkedIn thought leadership post.
+      </div>
+      <div class="li-reactions">
+        <span style="font-size:1rem">👍</span>
+        <span style="font-size:1rem">❤️</span>
+        <span style="font-size:1rem">💡</span>
+        <span style="margin-left:6px;">Reactions to come.</span>
+      </div>
+      <div class="li-actions">
+        <div class="li-action">👍 Like</div>
+        <div class="li-action">💬 Comment</div>
+        <div class="li-action">🔁 Repost</div>
+        <div class="li-action">📤 Send</div>
+      </div>
+    </div>
+
+    <!-- Copy / Regenerate -->
+    <div class="action-row">
+      <button class="act-btn" id="copy-btn" onclick="copyPost()">📋 Copy Post</button>
+      <button class="act-btn" onclick="generatePost()">🔄 Regenerate</button>
+    </div>
+
+    <!-- Meta card -->
+    <div class="card meta-card" id="meta-card">
+      <div class="card-body">
+
+        <div class="meta-row">
+          <div class="section-label">Character Count</div>
+          <div class="char-display" id="char-count">0 / 3,000</div>
+        </div>
+
+        <div class="meta-row">
+          <div class="section-label">Recommended Hashtags</div>
+          <div class="meta-val" style="font-size:0.75rem;color:var(--muted)">Click a tag to copy it.</div>
+          <div class="tags-wrap" id="hashtags"></div>
+        </div>
+
+        <div class="meta-row">
+          <div class="section-label">Best Time to Post</div>
+          <div class="meta-val" id="timing"></div>
+        </div>
+
+        <div class="meta-row">
+          <div class="section-label">Strategist's Note</div>
+          <div class="strat-note" id="strat-note"></div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /preview-col -->
+</div><!-- /page-wrap -->
+
+<footer>
+  <strong>LinkedIn Thought Leadership Generator</strong> &nbsp;·&nbsp; Senior Content Strategist Perspective &nbsp;·&nbsp; 2026
+</footer>
+
+<script>
+  // ─────────────────────────────────────────────────────
+  //  State
+  // ─────────────────────────────────────────────────────
+  let activeType  = 'contrarian';
+  let activeEmoji = 'minimal';
+  let spinIdx     = 0; // cycles to produce variation on regenerate
+
+  // ─────────────────────────────────────────────────────
+  //  UI helpers
+  // ─────────────────────────────────────────────────────
+  function selectType(btn) {
+    document.querySelectorAll('.type-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeType = btn.dataset.type;
+  }
+
+  function selectEmoji(btn) {
+    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeEmoji = btn.dataset.emoji;
+  }
+
+  // ─────────────────────────────────────────────────────
+  //  Emoji symbol map
+  // ─────────────────────────────────────────────────────
+  const SYM = {
+    none:     { bul:'', arr:'', fire:'', brain:'', chart:'', key:'', warn:'', up:'↑', spark:'' },
+    minimal:  { bul:'→', arr:'→', fire:'→', brain:'→', chart:'→', key:'→', warn:'⚠', up:'↑', spark:'✦' },
+    strategic:{ bul:'▸', arr:'→', fire:'🔥', brain:'🧠', chart:'📈', key:'🔑', warn:'⚠️', up:'📈', spark:'✦' },
+    full:     { bul:'▸', arr:'➡️', fire:'🔥', brain:'🧠', chart:'📊', key:'🔑', warn:'⚠️', up:'📈', spark:'✨' }
+  };
+
+  function sym() { return SYM[activeEmoji] || SYM.minimal; }
+
+  // pick from array with variation
+  function pick(arr) { return arr[spinIdx % arr.length]; }
+
+  // ─────────────────────────────────────────────────────
+  //  Industry context
+  // ─────────────────────────────────────────────────────
+  const IND = {
+    marketing:  { pros:'marketers',          field:'marketing',             brand:'brand',        action:'campaigns'       },
+    tech:       { pros:'product teams',      field:'tech',                  brand:'product',      action:'product launches' },
+    finance:    { pros:'finance leaders',    field:'finance',               brand:'firm',         action:'deals'           },
+    healthcare: { pros:'health innovators',  field:'healthcare',            brand:'organization', action:'patient outcomes' },
+    education:  { pros:'educators',          field:'edtech',                brand:'institution',  action:'learning outcomes'},
+    ecommerce:  { pros:'DTC founders',       field:'e-commerce',            brand:'brand',        action:'conversions'     },
+    services:   { pros:'consultants',        field:'professional services', brand:'firm',         action:'client results'  },
+    media:      { pros:'creators',           field:'media',                 brand:'media brand',  action:'content'         },
+    hr:         { pros:'people leaders',     field:'HR',                    brand:'organization', action:'hiring'          },
+    startup:    { pros:'founders',           field:'venture',               brand:'startup',      action:'fundraising'     }
+  };
+
+  // ─────────────────────────────────────────────────────
+  //  Hashtag sets
+  // ─────────────────────────────────────────────────────
+  const TAGS = {
+    contrarian:  ['#ContentStrategy','#ThoughtLeadership','#HotTake','#MarketingTruths','#LinkedInMarketing'],
+    story:       ['#PersonalBranding','#Leadership','#ContentMarketing','#Storytelling','#GrowthMindset'],
+    data:        ['#DataDriven','#ContentStrategy','#MarketingData','#B2BMarketing','#GrowthMarketing'],
+    howto:       ['#ContentCreation','#SocialMediaStrategy','#LinkedInTips','#Marketing2026','#ContentStrategy'],
+    prediction:  ['#FutureOfMarketing','#ContentStrategy2026','#MarketingTrends','#SocialMedia2026','#Innovation'],
+    myth:        ['#MarketingMyths','#ContentStrategy','#ThoughtLeadership','#LinkedInGrowth','#HotTake'],
+    lesson:      ['#Leadership','#PersonalBranding','#ContentMarketing','#GrowthMindset','#Storytelling'],
+    framework:   ['#ContentFramework','#MarketingStrategy','#ContentStrategy','#B2BMarketing','#ThoughtLeadership']
+  };
+
+  const IND_TAGS = {
+    marketing:'#ContentMarketing', tech:'#TechMarketing', finance:'#FinanceMarketing',
+    healthcare:'#HealthcareMarketing', education:'#EdTech', ecommerce:'#EcommerceMarketing',
+    services:'#ProfessionalServices', media:'#MediaStrategy', hr:'#HRMarketing', startup:'#StartupMarketing'
+  };
+
+  // ─────────────────────────────────────────────────────
+  //  Timing advice
+  // ─────────────────────────────────────────────────────
+  const TIMING = {
+    contrarian: 'Tue–Thu, 7–9 AM or 12–1 PM in your audience\'s timezone. Contrarian posts spike engagement fastest in morning windows when professionals are primed to debate.',
+    story:      'Monday 8 AM or Friday 9 AM. Story-driven posts get the highest dwell time early in the week — or on Fridays when readers are in a reflective headspace.',
+    data:       'Tue or Wed, 9–11 AM. Data posts land best mid-week when decision-makers are in planning mode and most likely to save for later.',
+    howto:      'Tue–Thu, 10 AM–12 PM. How-to posts get the highest save rate of any format — which is a strong algorithmic signal. Post when your audience is actively working.',
+    prediction: 'Monday 7–9 AM. Prediction posts set the agenda for the week and capture the most reshares when posted at the very start of the week.',
+    myth:       'Tue–Wed, 8–10 AM. Myth-busting content spikes comments — which LinkedIn\'s algorithm weights heavily in 2026. Morning window is peak debate time.',
+    lesson:     'Monday 8 AM or Sunday 8 PM. Reflective personal lesson posts perform best when readers are in a self-improvement mindset at the start of a new week.',
+    framework:  'Tue–Thu, 9–11 AM. Framework posts generate the highest profile-visit conversion rate — post when your target audience is actively working and problem-solving.'
+  };
+
+  // ─────────────────────────────────────────────────────
+  //  Strategist notes
+  // ─────────────────────────────────────────────────────
+  const NOTES = {
+    contrarian: '<strong>Why this works in 2026:</strong> Contrarian posts are the highest-engagement format on LinkedIn. They create immediate cognitive dissonance — the reader\'s first impulse is to agree or push back, which drives comments. The key is being contrarian <em>with evidence</em>, not just for shock value. In a post-AI content landscape, a well-reasoned contrarian take is the rarest signal of genuine expertise.',
+    story:      '<strong>Why this works in 2026:</strong> Story-arc posts have the highest dwell time of any LinkedIn format, and dwell time is one of the algorithm\'s strongest ranking signals in 2026. Vulnerability + professional insight is the formula — it humanizes you in a feed saturated with AI-polished content. Always write the hook <em>last</em> — it needs to create enough tension that "see more" is irresistible.',
+    data:       '<strong>Why this works in 2026:</strong> Data posts get saved at 3× the rate of pure opinion posts. Saves are a top algorithmic signal this year. The differentiator isn\'t the stat — it\'s your interpretation. Anyone can share a number. Your unique POV is what converts readers into followers. Always cite your source; credibility is currency.',
+    howto:      '<strong>Why this works in 2026:</strong> How-to posts have the highest save rate of any format. When someone saves a post, LinkedIn treats it as high-value content and amplifies organic reach. The "save for later" behavior also creates multiple impression opportunities as readers return. Numbered steps signal scannability — readers decide in under two seconds whether to stop scrolling.',
+    prediction: '<strong>Why this works in 2026:</strong> Bold prediction posts generate the highest reshare rate — people tag colleagues to start conversations. The key: make your prediction <em>specific</em> enough to be memorable and <em>falsifiable</em> enough to be credible. "Everything will change" is forgettable. A named prediction with a timeline is shareable. First-mover predictions that age well become cornerstone content.',
+    myth:       '<strong>Why this works in 2026:</strong> Myth-busting posts generate comment volume by inviting disagreement — which LinkedIn\'s algorithm heavily rewards. Each myth you bust is a micro-post in itself, making the format highly scannable. The best myth-busters come from <em>specific lived experience</em>. Credentials without specificity don\'t persuade anyone in 2026. This format also positions you as an educator — the highest-trust archetype in B2B content.',
+    lesson:     '<strong>Why this works in 2026:</strong> Personal lesson posts have the highest comment-to-impression ratio of any format because they invite reciprocal vulnerability. Readers share their own stories in reply, creating a community signal LinkedIn\'s algorithm heavily weights over one-word reactions. The most effective ones are <em>specific</em> (a real moment, not a vague "I was struggling") with a <em>universal application</em>.',
+    framework:  '<strong>Why this works in 2026:</strong> Framework posts generate the highest profile-visit conversion rate. When someone finds a framework valuable, they check who built it — converting readers into followers and leads. Naming your framework creates a proprietary asset: your audience will use your terminology, amplifying your brand every time they do. This format is the highest-ROI investment in long-term thought leadership positioning.'
+  };
+
+  // ─────────────────────────────────────────────────────
+  //  Template functions
+  // ─────────────────────────────────────────────────────
+  function tmpl_contrarian(topic, insight, metric, ctx) {
+    const s = sym();
+    const hooks = [
+      `The most dangerous belief in ${ctx.field} right now has nothing to do with AI.\n\nIt's this:`,
+      `Hot take: Almost everything you've been taught about ${topic.toLowerCase()} was designed to keep you comfortable.\n\nHere's what nobody in the room will actually say:`,
+      `I've spent 12 years in content strategy.\n\nThe advice that helped me most? It came from ignoring the "best practices."`,
+      `Everyone in ${ctx.field} is optimizing for the wrong metric.\n\nAnd it's costing ${ctx.pros} credibility, reach, and real revenue.`
+    ];
+
+    let p = pick(hooks) + '\n\n';
+    p += `"${topic}"\n\n`;
+    p += `Here's what ${11 + (spinIdx % 5)} years in content strategy actually taught me:\n\n`;
+    p += `1. More content ≠ more reach.\n${s.bul} Earn attention once. Make it impossible to forget.\n\n`;
+    p += `2. Consistency is overrated. Relevance is the real moat.\n${s.bul} Post when you have something worth saying — not because the calendar says so.\n\n`;
+    p += `3. Your audience doesn't care about your ${ctx.brand}.\n${s.bul} They care about themselves. The best content is a mirror, not a megaphone.\n\n`;
+    if (metric) p += `${s.chart} The data backs it up: ${metric}\n\n`;
+    p += `The real insight: ${insight}\n\n`;
+    p += `The ${ctx.pros} winning in 2026 aren't the ones with the biggest budgets or the most consistent posting schedules.\n\n`;
+    p += `They're the ones willing to say the thing no one else will — and back it with evidence.\n\n`;
+    p += `What's the conventional wisdom in ${ctx.field} that needs to die?\n\nDrop it below. I read every reply.`;
+    return p.trim();
+  }
+
+  function tmpl_story(topic, insight, metric, ctx) {
+    const s = sym();
+    const hooks = [
+      `Three years ago, I walked into a client meeting completely unprepared.\n\nWhat happened next changed how I think about ${topic.toLowerCase()} forever.`,
+      `I almost quit content strategy in 2024.\n\nHere's the moment that changed everything — and what it taught me about ${topic.toLowerCase()}:`,
+      `The biggest failure of my career taught me the most important lesson about ${topic.toLowerCase()}.\n\nI've never shared the full story. Until now.`,
+      `A junior team member once gave me feedback that hurt.\n\nThey were completely right. And it completely changed how I approach ${topic.toLowerCase()}.`
+    ];
+
+    let p = pick(hooks) + '\n\n';
+    p += `[The situation]\n`;
+    p += `We were six months into a ${ctx.action} that was, by every traditional metric, failing.\n\n`;
+    p += `Impressions down. Engagement flat. Team demoralized.\n\n`;
+    p += `Then something unexpected happened.\n\n`;
+    p += `A single piece of content — one we almost didn't publish — changed everything.\n\n`;
+    p += `It wasn't the most polished thing we'd produced.\nIt wasn't the most "on-brand."\n\n`;
+    p += `But it was the most honest.\n\n`;
+    if (metric) p += `${s.chart} What happened: ${metric}\n\n`;
+    p += `Here's what that moment taught me about ${topic}:\n\n`;
+    p += `${s.bul} ${insight}\n\n`;
+    p += `${s.bul} Authenticity isn't a strategy. It's the only strategy that survives algorithm changes.\n\n`;
+    p += `${s.bul} The content your team is most afraid to publish is usually the content your audience needs most.\n\n`;
+    p += `In a feed full of AI-polished, perfectly formatted posts, the raw and honest ones stop the scroll every time.\n\n`;
+    p += `What's a piece of content you've been sitting on because it feels too vulnerable?\n\nPublish it this week. I promise it outperforms everything else.`;
+    return p.trim();
+  }
+
+  function tmpl_data(topic, insight, metric, ctx) {
+    const s = sym();
+    const openings = [
+      `${metric || '71% of B2B buyers consume 3+ pieces of thought leadership before contacting a vendor.'}\n\nThis number should reframe how every ${ctx.pros} team allocates its content budget.`,
+      `New data just redefined the content game for ${ctx.pros} — and most haven't noticed yet.\n\n${s.chart} ${metric || 'Posts with a clear POV generate 4.7× more comments than information-only content.'}\n\nHere's what it actually means:`,
+      `The data on ${topic.toLowerCase()} is in.\n\nAnd it contradicts almost everything ${ctx.pros} were told to do in 2023.\n\n${s.chart} ${metric || 'Authentic personal-brand content outperforms branded content 3:1 on organic reach in 2026.'}`
+    ];
+
+    let p = pick(openings) + '\n\n';
+    p += `The breakdown:\n\n`;
+    p += `${s.bul} Platforms are now rewarding dwell time over click-through rates.\n`;
+    p += `${s.bul} AI-generated content is being filtered by audiences in under 1.3 seconds on average.\n`;
+    p += `${s.bul} Personal brand accounts are outpacing ${ctx.brand} pages by 3:1 on organic reach — a gap that's widening.\n\n`;
+    p += `What this means for ${ctx.pros} right now:\n\n`;
+    p += `1. Your ${ctx.brand} needs a human face. Not a mascot. A real person with a real perspective.\n\n`;
+    p += `2. ${insight}\n\n`;
+    p += `3. The ${ctx.pros} investing in thought leadership today are building a compound asset. Ad spend rents attention. Content strategy owns it.\n\n`;
+    p += `The data is clear.\nThe strategy is clear.\n\nWhat's stopping most ${ctx.pros} is execution — specifically, the willingness to put a genuine POV in writing and publish it.\n\n`;
+    p += `What's the hardest part of thought leadership for your ${ctx.brand}? Let's problem-solve in the comments.`;
+    return p.trim();
+  }
+
+  function tmpl_howto(topic, insight, metric, ctx) {
+    const s = sym();
+    const hooks = [
+      `How to build a ${topic} system that works — without burning out your team:\n\nMost ${ctx.pros} fail at step one. Here's the framework I've refined over a decade:`,
+      `I've worked with 40+ ${ctx.pros} on ${topic}.\n\nHere's the exact 5-step process that actually moves the needle (and why most people skip the most important step):`,
+      `Stop overcomplicating ${topic}.\n\nAfter 12 years of building content strategies for ${ctx.pros}, here's the framework I come back to every time:`
+    ];
+
+    let p = pick(hooks) + '\n\n';
+    p += `Step 1: Define the one outcome — not ten.\n`;
+    p += `${s.bul} Every post should move one specific person one specific step toward one specific action. Not three people in five directions.\n\n`;
+    p += `Step 2: Engineer the hook before you write the content.\n`;
+    p += `${s.bul} Your first line earns the "see more" click. Write your hook last — after you know what you're actually saying.\n\n`;
+    p += `Step 3: Lead with the insight. Support it with the story.\n`;
+    p += `${s.bul} ${insight}\n\n`;
+    p += `Step 4: Create one "save-worthy" moment per post.\n`;
+    p += `${s.bul} A framework. A counterintuitive stat. A sharp reframe. Give people a reason to bookmark it.\n\n`;
+    p += `Step 5: End with a question — never a pitch.\n`;
+    p += `${s.bul} Questions open conversations. Pitches close them. LinkedIn rewards posts that generate meaningful dialogue.\n\n`;
+    if (metric) p += `${s.chart} When applied consistently: ${metric}\n\n`;
+    p += `The truth most ${ctx.pros} don't want to hear:\n\n`;
+    p += `Consistency is a tactic. Resonance is the strategy.\n\n`;
+    p += `You can post every day and still be invisible. Or post once a week with genuine authority and watch the compound effect build.\n\n`;
+    p += `Save this. Come back to it the next time you're staring at a blank content calendar.`;
+    return p.trim();
+  }
+
+  function tmpl_prediction(topic, insight, metric, ctx) {
+    const s = sym();
+    const hooks = [
+      `${s.warn} Bold call: ${topic} will fundamentally change how top ${ctx.pros} work by the end of 2026.\n\nHere's my evidence — and what to do before the window closes:`,
+      `I'm going on record.\n\n${topic} is about to create the biggest divide between winning and losing ${ctx.pros} in a decade.`,
+      `The inflection point for ${topic} in ${ctx.field} is here.\n\nI've watched this pattern in content for 12 years. This time, the shift is moving faster.`
+    ];
+
+    let p = pick(hooks) + '\n\n';
+    p += `Signal 1: The platforms are already rewarding it.\n`;
+    p += `${s.up} LinkedIn shifted its algorithm twice in the past six months. Both changes favor original POV over curated and AI-assisted content.\n\n`;
+    p += `Signal 2: Early adopters are seeing outsized returns.\n`;
+    p += `${s.up} The ${ctx.pros} who leaned into this 12 months ago have 3× the audience growth of their peers — with no paid amplification.\n\n`;
+    p += `Signal 3: The window is closing fast.\n`;
+    p += `${s.bul} ${insight}\n\n`;
+    if (metric) p += `${s.chart} ${metric}\n\n`;
+    p += `The ${ctx.pros} who move in the next 90 days will be the ones teaching everyone else in 2027.\n\n`;
+    p += `The ones who wait will be writing post-mortems about what they missed.\n\n`;
+    p += `I've watched this exact pattern repeat across every major platform shift of the last decade.\n\n`;
+    p += `This is the biggest inflection point I've seen yet for ${ctx.field}.\n\n`;
+    p += `What's your prediction for ${ctx.field} by end of 2026? I'd genuinely like to know where you think this is headed.`;
+    return p.trim();
+  }
+
+  function tmpl_myth(topic, insight, metric, ctx) {
+    const s = sym();
+    const hooks = [
+      `${s.warn} Stop believing these ${topic} myths.\n\nThey're costing ${ctx.pros} credibility, reach, and real revenue in 2026:`,
+      `I've heard the same bad advice about ${topic} at every conference for a decade.\n\nTime to kill it — with specifics, not opinions:`,
+      `The "${topic}" best practices most ${ctx.pros} follow are based on data from 2019.\n\nHere's what's actually true right now:`
+    ];
+
+    let p = pick(hooks) + '\n\n';
+    p += `MYTH: More posting = more growth.\n`;
+    p += `REALITY: Posting five times a week with nothing to say trains your audience to scroll past you. One post that earns ten minutes of attention beats ten posts that earn ten seconds. Frequency is not a strategy.\n\n`;
+    p += `MYTH: You need a big audience to have influence.\n`;
+    p += `REALITY: A tight community of 500 people who genuinely trust you converts better than 50,000 passive followers. Depth beats breadth — especially in B2B.\n\n`;
+    p += `MYTH: ${topic} is about reaching new people.\n`;
+    p += `REALITY: ${insight}\n\n`;
+    if (metric) p += `${s.chart} The data: ${metric}\n\n`;
+    p += `MYTH: AI will replace the content strategist.\n`;
+    p += `REALITY: AI replaced the content producer. The strategist who knows how to direct AI — and when to override it — just became 10× more valuable than they were 18 months ago.\n\n`;
+    p += `I've made every one of these mistakes personally. Some cost me clients. All of them taught me something.\n\n`;
+    p += `The good news: every one is fixable in a single strategy session.\n\n`;
+    p += `Which myth were you most guilty of?\n\nNo judgment — I'll go first in the comments.`;
+    return p.trim();
+  }
+
+  function tmpl_lesson(topic, insight, metric, ctx) {
+    const s = sym();
+    const hooks = [
+      `I almost walked away from content strategy in 2024.\n\nHere's the lesson that kept me — and the one thing I wish someone had told me sooner about ${topic.toLowerCase()}:`,
+      `The feedback that stung most in my career came from a junior team member.\n\nThey were completely right. Here's what it taught me about ${topic.toLowerCase()}:`,
+      `I spent two years optimizing the wrong things.\n\nReal talk: here's what ${topic.toLowerCase()} actually taught me when I finally slowed down enough to pay attention.`
+    ];
+
+    let p = pick(hooks) + '\n\n';
+    p += `I was obsessed with metrics that looked impressive in decks.\n\nImpressions. Follower growth. Share of voice.\n\n`;
+    p += `None of it translated to the thing clients and employers actually cared about: trust and revenue.\n\n`;
+    p += `The shift happened when I stopped asking:\n"How do we reach more people?"\n\n`;
+    p += `And started asking:\n"How do we matter more to the right people?"\n\n`;
+    p += `Three things I learned the hard way:\n\n`;
+    p += `${s.bul} ${insight}\n\n`;
+    p += `${s.bul} Your personal credibility is your content's most powerful distribution channel. Build it deliberately — and protect it ruthlessly.\n\n`;
+    p += `${s.bul} The content that feels most vulnerable to publish almost always performs best. Not because vulnerability is a tactic — because honesty is rare, and rare things stop the scroll.\n\n`;
+    if (metric) p += `${s.chart} ${metric}\n\n`;
+    p += `In ${ctx.field}, we're trained to project confidence and polish.\n\n`;
+    p += `But the ${ctx.pros} people actually follow? They share the real story — not just the highlight reel.\n\n`;
+    p += `What's a hard lesson your career in ${ctx.field} has taught you?\n\nShare it below. Your experience might be exactly what someone else needs to read today.`;
+    return p.trim();
+  }
+
+  function tmpl_framework(topic, insight, metric, ctx) {
+    const s = sym();
+    const names = ['ECHO', 'CORE', 'SIGNAL', 'PRISM', 'ANCHOR', 'ORBIT'];
+    const name = names[spinIdx % names.length];
+    const hooks = [
+      `The ${name} Framework for ${topic}:\n\n(Built over 12 years of content strategy — sharing it publicly for the first time.)`,
+      `After working with 40+ ${ctx.pros} on ${topic}, I've distilled everything into one framework.\n\nI call it ${name}. Here's how to use it:`,
+      `Most ${ctx.pros} overcomplicate ${topic}.\n\nHere's the ${name} Framework — four principles that simplify it down to what actually works.`
+    ];
+
+    const pillars = [
+      [`E — Earn attention before you ask for it.`, `The first job of any content is to be worth consuming. Not just relevant — genuinely valuable to the specific person you're trying to reach.`],
+      [`C — Context shapes everything.`, `The same message lands completely differently depending on when, where, and to whom you deliver it. Format your content for the platform, not your portfolio.`],
+      [`H — Hook first, substance second.`, `Your opening earns the read. Your substance earns the save and the share. Never bury the insight.`],
+      [`O — Own your perspective.`, insight],
+    ];
+
+    const altPillars = [
+      [`C — Clarity over cleverness.`, `The smartest-sounding post is rarely the most effective one. Write for your audience's clarity, not your own credibility.`],
+      [`O — One outcome per post.`, `Every piece of content should move one person one step closer to one action. Multi-outcome posts diffuse impact.`],
+      [`R — Resonance beats reach.`, `A post that deeply moves 200 people outperforms one that mildly interests 20,000. Build depth before breadth.`],
+      [`E — Evidence, always.`, insight],
+    ];
+
+    const usePillars = spinIdx % 2 === 0 ? pillars : altPillars;
+
+    let p = pick(hooks) + '\n\n';
+    usePillars.forEach(([title, desc]) => {
+      p += `${title}\n${s.bul} ${desc}\n\n`;
+    });
+
+    if (metric) p += `${s.chart} When applied consistently: ${metric}\n\n`;
+    p += `The reason most ${ctx.pros} struggle with ${topic} isn't skill or budget.\n\n`;
+    p += `It's executing tactics before installing a framework.\n\n`;
+    p += `Frameworks eliminate decision fatigue. They let you move faster, with more consistency, and with less second-guessing.\n\n`;
+    p += `This one took me a decade to distill. You can apply it tomorrow.\n\n`;
+    p += `Save this post.\n\nAnd if you want to see the ${name} Framework applied to your specific situation — drop "${name}" in the comments and I'll show you how I'd adapt it.`;
+    return p.trim();
+  }
+
+  // ─────────────────────────────────────────────────────
+  //  Template dispatch
+  // ─────────────────────────────────────────────────────
+  const TMPLS = {
+    contrarian: tmpl_contrarian,
+    story:      tmpl_story,
+    data:       tmpl_data,
+    howto:      tmpl_howto,
+    prediction: tmpl_prediction,
+    myth:       tmpl_myth,
+    lesson:     tmpl_lesson,
+    framework:  tmpl_framework
+  };
+
+  // ─────────────────────────────────────────────────────
+  //  Generate
+  // ─────────────────────────────────────────────────────
+  function generatePost() {
+    const topic   = document.getElementById('f-topic').value.trim();
+    const insight = document.getElementById('f-insight').value.trim();
+    const metric  = document.getElementById('f-metric').value.trim();
+    const industry= document.getElementById('f-industry').value;
+    const role    = document.getElementById('f-role').value.trim();
+
+    // Validation
+    let valid = true;
+    ['f-topic','f-insight'].forEach(id => {
+      const el = document.getElementById(id);
+      if (!el.value.trim()) {
+        el.classList.add('error');
+        valid = false;
+        setTimeout(() => el.classList.remove('error'), 2200);
+      }
+    });
+    if (!valid) {
+      document.getElementById('f-topic').focus();
+      return;
+    }
+
+    spinIdx = (spinIdx + 1) % 12;
+
+    const ctx = IND[industry] || IND.marketing;
+    const fn  = TMPLS[activeType];
+    const text = fn(topic, insight, metric, ctx);
+
+    // Profile
+    if (role) {
+      const sep   = role.match(/[—\-,]/);
+      const name  = sep ? role.slice(0, role.indexOf(sep[0])).trim() : role;
+      const rl    = sep ? role.slice(role.indexOf(sep[0]) + 1).trim() : 'Senior Content Strategist · 2026';
+      const init  = name.split(/\s+/).map(w => w[0]).join('').toUpperCase().slice(0, 2);
+      document.getElementById('avatar').textContent       = init;
+      document.getElementById('profile-name').textContent = name;
+      document.getElementById('profile-role').textContent = rl;
+    } else {
+      document.getElementById('avatar').textContent       = 'SC';
+      document.getElementById('profile-name').textContent = 'Your Name';
+      document.getElementById('profile-role').textContent = 'Senior Content Strategist · 2026';
+    }
+
+    // Post body
+    const out = document.getElementById('post-output');
+    out.textContent = text;
+    out.classList.remove('placeholder');
+    out.classList.add('fade-in');
+    setTimeout(() => out.classList.remove('fade-in'), 400);
+
+    // Char count
+    const len = text.length;
+    const countEl = document.getElementById('char-count');
+    countEl.textContent = `${len.toLocaleString()} / 3,000 characters`;
+    countEl.className = 'char-display' + (len > 3000 ? ' over' : len > 2500 ? ' warn' : '');
+
+    // Hashtags
+    const baseTags = (TAGS[activeType] || []).slice(0, 5);
+    const indTag   = IND_TAGS[industry] || '#Marketing';
+    const allTags  = [...new Set([...baseTags, indTag])].slice(0, 6);
+    document.getElementById('hashtags').innerHTML =
+      allTags.map(t => `<span class="tag" onclick="copyTag('${t}',this)">${t}</span>`).join('');
+
+    // Timing + note
+    document.getElementById('timing').textContent    = TIMING[activeType] || TIMING.contrarian;
+    document.getElementById('strat-note').innerHTML  = NOTES[activeType] || '';
+
+    // Show meta card
+    const meta = document.getElementById('meta-card');
+    meta.style.display = 'block';
+    meta.classList.add('fade-in');
+    setTimeout(() => meta.classList.remove('fade-in'), 400);
+
+    // Reset copy button
+    const copyBtn = document.getElementById('copy-btn');
+    copyBtn.textContent = '📋 Copy Post';
+    copyBtn.classList.remove('success');
+  }
+
+  // ─────────────────────────────────────────────────────
+  //  Copy utilities
+  // ─────────────────────────────────────────────────────
+  function copyPost() {
+    const out = document.getElementById('post-output');
+    if (out.classList.contains('placeholder') || !out.textContent.trim()) return;
+    navigator.clipboard.writeText(out.textContent).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copied to clipboard';
+      btn.classList.add('success');
+      setTimeout(() => {
+        btn.textContent = '📋 Copy Post';
+        btn.classList.remove('success');
+      }, 2600);
+    });
+  }
+
+  function copyTag(tag, el) {
+    navigator.clipboard.writeText(tag).then(() => {
+      const orig = el.textContent;
+      el.textContent = '✓ Copied';
+      setTimeout(() => { el.textContent = orig; }, 1400);
+    });
+  }
+</script>
+
+</body>
+</html>
