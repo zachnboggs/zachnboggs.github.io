@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketing Portfolio - Your Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="styles.min.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <meta http-equiv="Cache-Control" content="max-age=31536000" />
+</head>
+<body>
+
+<header data-aos="fade-down">
+  <h1>Your Name - Marketing Specialist</h1>
+  <p>Helping brands grow with digital marketing</p>
+</header>
+
+<nav data-aos="fade-down" data-aos-delay="100">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about" data-aos="fade-up">
+  <h2>About Me</h2>
+  <p>Hello! I'm Your Name, a marketing specialist with over X years of experience creating impactful campaigns that increase brand visibility and engagement.</p>
+</section>
+
+<section id="services" data-aos="fade-up" data-aos-delay="100">
+  <h2>Services</h2>
+  <ul>
+    <li>Social Media Marketing</li>
+    <li>Content Strategy & Creation</li>
+    <li>SEO & SEM</li>
+    <li>Email Marketing</li>
+  </ul>
+</section>
+
+<section id="projects" data-aos="fade-up" data-aos-delay="200">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <img src="https://via.placeholder.com/400x300.webp" alt="Campaign screenshot" />
+      <h3>Project 1</h3>
+      <p>Developed a social media campaign that increased engagement by 50% in 3 months.</p>
+    </div>
+    <div class="project">
+      <img src="https://via.placeholder.com/400x300.webp" alt="Content strategy visual" />
+      <h3>Project 2</h3>
+      <p>Created content strategy for a startup that led to a 30% boost in website traffic.</p>
+    </div>
+    <div class="project">
+      <img src="https://via.placeholder.com/400x300.webp" alt="SEO dashboard" />
+      <h3>Project 3</h3>
+      <p>Managed SEO for an ecommerce store that doubled organic search revenue.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-aos="fade-up" data-aos-delay="300">
+  <h2>Contact Me</h2>
+  <form class="contact-form" onsubmit="submitForm(event)">
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" placeholder="Your name" required />
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" placeholder="Your email" required />
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Your message" rows="5" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+  <p id="responseMsg" style="color:green;"></p>
+</section>
+
+<footer>
+  <p>© 2025 Your Name | Marketing Portfolio</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/just-validate@4.2.0/dist/just-validate.production.min.js"></script>
+<script src="script.min.js"></script>
+</body>
+</html>
